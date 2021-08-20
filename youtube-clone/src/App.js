@@ -10,12 +10,12 @@ const App = (props) => {
 
   useEffect(()=> {
     axios.get('https://www.youtube.com/embed/VIDEO_ID')
-    .then(response => setVideo(response.data, [props.index])
-    )},[video, props.index])
-
+    .then(response => setVideo(response.data)
+    )},[])
+    console.log(video)
   return (
     <div>
-      <h1>Hello World</h1>
+      <h1>Hello World {useEffect}</h1>
     </div>
   );
 
