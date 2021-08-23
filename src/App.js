@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-// import Bootstrap from 'bootstrap';
-// import { SearchBar, VideoList } from "./components";
+import Bootstrap from 'bootstrap';
+import SearchBar from "./components/SearchBar/searchBar";
 import axios from 'axios';
 
 const App = (props) => {
@@ -16,6 +16,7 @@ const App = (props) => {
   return (
     <div>
       <h1>Hello World {useEffect}</h1>
+      <SearchBar />
     </div>
   );
 
