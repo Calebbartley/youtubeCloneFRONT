@@ -52,6 +52,6 @@
 </div>
 </nav> */}
 
-);
+// );
 
 // export default SearchBar;
