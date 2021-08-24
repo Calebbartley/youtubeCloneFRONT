@@ -1,5 +1,12 @@
+@import-normalize;
+
+
 .App {
+  background-position: 100%;
+  display: flex;
   text-align: center;
+  justify-content: center;
+  background-image: url(./components/images/keith-misner-h0Vxgz5tyXA-unsplash.jpg);
 }
 
 .App-logo {

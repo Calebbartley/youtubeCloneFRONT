@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-// import SearchBar from "./components/SearchBar/searchBar";
+import SearchBar from "./components/SearchBar/searchBar";
+import './App.css'
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -21,12 +22,12 @@ import 'bootstrap/dist/css/bootstrap.css';
     //   )},[comments, props.index])
     //   console.log(video)
     return (
-      <div>
+      <div className='App'>
         {/* <h1>Hello World {useEffect}</h1> */}
         <ul>
           {comments.map((comment, index) => <li key={index}>{comment.userName} {comment.userComment} </li>)}
         </ul>
-        {/* <SearchBar /> */}
+        <SearchBar /> 
       </div>
     );
 }
