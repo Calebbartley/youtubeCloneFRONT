@@ -1,36 +1,15 @@
-import React, { useState, useRef } from 'react';
-import cn from "classnames"
+import React, { useState } from "react";
 import "./comments.css"
-const INITIAL_HEIGHT = 110;
 
+// const addComment=() => {
+//   const [comment, setComment] = useState("");
+
+//   const handleSubmit = (evt) => {
+//       evt.preventDefault();
+//       alert(`Submitting search ${comment}`)
+//   }
+// }
 const Comment = () => {
-    const [isExpanded, setIsExpanded] = useState(false);
-    const [commentValue, setCommentValue] = useState("");
-
-    const outerHeight = useRef(INITIAL_HEIGHT);
-    const textRef = useRef(null);
-    const containerRef = useRef(null);
-
-    const onExpand = () => {
-    if (!isExpanded) {
-        outerHeight.current = containerRef.current.scrollHeight;
-        setIsExpanded(true);
-        }
-    }
-
-    const onChange = (e) => {
-        setCommentValue(e.target.value);
-	}
-
-    const onClose = () => {
-        setCommentValue("");
-        setIsExpanded(false);
-    };
-
-    const onSubmit = (e) => {
-        e.preventDefault();
-        console.log('send the form data somewhere')
-    }
 
     return (
         <div>
