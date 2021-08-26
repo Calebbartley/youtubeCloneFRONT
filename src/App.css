@@ -10,7 +10,7 @@ head{
 }
 
 body{
-  background-image: url(./components/images/keith-misner-h0Vxgz5tyXA-unsplash.jpg);
+  /* background-image: url(./components/images/keith-misner-h0Vxgz5tyXA-unsplash.jpg); */
   position: relative;
   background-size: cover;
   display: flex;
