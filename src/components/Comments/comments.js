@@ -1,31 +1,23 @@
 import React, { useState } from "react";
 import "./comments.css"
+import Comment from "../Comment/Comment";
 
-// const addComment=() => {
-//   const [comment, setComment] = useState("");
 
-//   const handleSubmit = (evt) => {
-//       evt.preventDefault();
-//       alert(`Submitting search ${comment}`)
-//   }
-// }
-const Comment = () => {
+const Comments = ({comments, deleteComment, putComment, postReply}) => {
+
+
+
 
     return (
         <div>
-            <form>
-            <div class="form-group">
-                <label for="exampleFormControlInput1">User Name</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Text"/>
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlTextarea1">Add a public comment...</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-            </form>
+            <ul>
+
+                {comments.map((comment, index) => <Comment comment={comment} index={index} postReply={postReply} deleteComment={deleteComment} putComment={putComment}/>)}
+                {/*postId.map((postId, index)=> <li key={index}>{postId.userName}{postId.userComment}</li>)*/}
+            </ul>
         </div>
     );
 };
 
-export default Comment;
+export default Comments;
 

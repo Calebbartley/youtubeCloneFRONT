@@ -9,14 +9,14 @@ head{
   justify-content: right;
 }
 
-body{
-  background-image: url(./components/images/keith-misner-h0Vxgz5tyXA-unsplash.jpg);
+/* body{
+  background-image: url('./components/images/keith-misner-h0Vxgz5tyXA-unsplash.jpg');
   position: relative;
   background-size: cover;
   display: flex;
   text-align: center;
   justify-content: center;
-}
+} */
 
 Nav{
   margin-right: 2000px;
