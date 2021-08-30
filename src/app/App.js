@@ -64,8 +64,7 @@ import 'bootstrap/dist/css/bootstrap.css';
           <iframe src="https://www.youtube.com/embed/cWDJoK8zw58"></iframe>
         
         </div>
-        <Comment/>
-
+       
         {/*  <div className="pos-f-t">
             <div className="collapse" id="navbarToggleExternalContent">
               <div className="bg-dark p-4">
@@ -84,11 +83,12 @@ import 'bootstrap/dist/css/bootstrap.css';
       <div className="App">
  */}
 
-      <SearchBar />
+{/*<SearchBar />*/}
+
 
         <button onClick={postComment}> Click me to post comment</button>
 
-          {<Comments comments={comments} postReply={postReply} deleteComment={deleteComment} putComment={putComment}/>}
+          <Comments comments={comments} postReply={postReply} deleteComment={deleteComment} putComment={putComment}/>
       </div>
 
 
