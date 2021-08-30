@@ -18,6 +18,7 @@ import useForm from "../hooks/useForm";
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const postComment = ()=>{
       axios.post('http://localhost:7000/api/comments/', {
+        
         userName: 'post',
         userComment: 'number1',
       })
@@ -51,27 +52,24 @@ import useForm from "../hooks/useForm";
       .catch(error => console.log(error))
     }
 
-
     useEffect(() => {
       axios.get('http://localhost:7000/api/comments')
       .then(response => setComments(response.data))
     }, [postComment,deleteComment,putComment, postReply])
 
-
+   
+  
+    
     return (
       <div >
           <div>
           <iframe src="https://www.youtube.com/embed/cWDJoK8zw58"></iframe>
           </div>
-          <button onClick={postComment}> Click me to post comment</button>
-        
-
+          < button onClick={postComment}> Click me to post comment</button>
           <Comments comments={comments} postReply={postReply} deleteComment={deleteComment} putComment={putComment} />
-        
-      </div>
 
-        
-    
+           
+      </div>
 
     );
 }
