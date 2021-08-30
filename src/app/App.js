@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 
 import SearchBar from "../components/SearchBar/searchBar";
+import Comment from "../components/Comments/comments";
 import './App.css'
 import comments from "../components/Comments/comments";
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.css';
-import Comments from "../components/Comments/comments";
 
 
   const App = (props) => {
@@ -13,7 +13,7 @@ import Comments from "../components/Comments/comments";
 
 
     const [comments, setComments] = useState([]);
-    
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const postComment = ()=>{
       axios.post('http://localhost:7000/api/comments', {
@@ -40,7 +40,7 @@ import Comments from "../components/Comments/comments";
         userComment: 'Mayne'
       })
       .then(response => (response.data));
-      
+    
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -58,11 +58,13 @@ import Comments from "../components/Comments/comments";
 
 
     return (
+      
       <div >
         <div>
           <iframe src="https://www.youtube.com/embed/cWDJoK8zw58"></iframe>
-          <Comments/>
+        
         </div>
+        <Comment/>
 
         {/*  <div className="pos-f-t">
             <div className="collapse" id="navbarToggleExternalContent">
@@ -77,22 +79,20 @@ import Comments from "../components/Comments/comments";
               </button>
             </nav>
       </div>
-          <SearchBar />
 
-        
 
-          <div className="App">
-          
-        <Comment className="App"/> */}
-        
+      <div className="App">
+ */}
 
-          <button onClick={postComment}> Click me to post comment</button>
-          
-              <Comments comments={comments} postReply={postReply} deleteComment={deleteComment} putComment={putComment}/>
+      <SearchBar />
+
+        <button onClick={postComment}> Click me to post comment</button>
+
+          {<Comments comments={comments} postReply={postReply} deleteComment={deleteComment} putComment={putComment}/>}
       </div>
 
-        
-    
+
+
 
     );
 }

@@ -6,18 +6,20 @@ const Comment = ({comment, deleteComment, putComment, index, postReply}) => {
         setUserComment(event.target.value);
     }
 
-    return ( 
+    return (
+      <div>
         <li key={index}> {comment.userName} {comment.userComment}  <button  onClick={() => deleteComment(comment._id)}> 💢</button> <button onClick={() => putComment(comment._id)} >Edit Comment</button>
-        <form onSubmit={()=> postReply(comment._id, "Replier", userComment)}>
-        <input onChange={ handleChange } className="form-floating" className="form-control" placeholder="Leave a comment here" id="floatingTextarea2" />
-          <label for="floatingTextarea2"></label>
-          <button type="submit">REPLY</button>
-        </form>
+          <form onSubmit={()=> postReply(comment._id, "Replier", userComment)}>
+            <input onChange={ handleChange } className="form-floating" className="form-control" placeholder="Leave a comment here" id="floatingTextarea2" />
+            <label for="floatingTextarea2"></label>
+            <button type="submit">REPLY</button>
+          </form>
         </li>
-     );
+      </div>
+    );
 }
 
-//this component needs 
+//this component needs
 //reply form: needs a handleChange from the slides
 
 
