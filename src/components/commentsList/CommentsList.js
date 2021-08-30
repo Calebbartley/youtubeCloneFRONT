@@ -1,9 +1,9 @@
 import React from "react";
-import "./comments.css"
+import "./CommentsList.css"
 import Comment from "../Comment/Comment";
 
 
-const Comments = ({comments, deleteComment, putComment, postReply}) => {
+const CommentsList = ({comments, deleteComment, putComment, postReply}) => {
    
 
 
@@ -11,10 +11,10 @@ const Comments = ({comments, deleteComment, putComment, postReply}) => {
 
     return (
         <div>
-            <ul>
+            <h3>
             {comments.map((comment, index) => <Comment comment={comment} index={index} postReply={postReply} deleteComment={deleteComment} putComment={putComment}/>)}
             {/*postId.map((postId, index)=> <li key={index}>{postId.userName}{postId.userComment}</li>)*/}
-            </ul>
+            </h3>
             
         </div>
         
@@ -22,4 +22,5 @@ const Comments = ({comments, deleteComment, putComment, postReply}) => {
     );
 };
 
-export default Comments;
+
+export default CommentsList;

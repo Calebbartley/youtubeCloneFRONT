@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 
 import SearchBar from "../components/SearchBar/searchBar";
-import Comment from "../components/Comments/comments";
-import './App.css'
-import comments from "../components/Comments/comments";
-import axios from 'axios';
+import CommentsList from "../components/commentsList/CommentsList";
+import Comment from "../components/Comment/Comment";
 import 'bootstrap/dist/css/bootstrap.css';
+import './App.css'
+import axios from 'axios';
+import { Container, Nav, Navbar } from "react-bootstrap";
+import NavbarToggle from "react-bootstrap/esm/NavbarToggle";
+import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
 
 
   const App = (props) => {
@@ -16,7 +19,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const postComment = ()=>{
-      axios.post('http://localhost:7000/api/comments', {
+      axios.post('http://localhost:7000/api/comments/', {
+        
         userName: 'post',
         userComment: 'number1'
       })
@@ -50,49 +54,40 @@ import 'bootstrap/dist/css/bootstrap.css';
       .catch(error => console.log(error))
     }
 
-
     useEffect(() => {
       axios.get('http://localhost:7000/api/comments')
       .then(response => setComments(response.data))
     }, [postComment,deleteComment,putComment,postReply])
 
-
+   
+  
+    
     return (
       
       <div >
         <div>
-          <iframe src="https://www.youtube.com/embed/cWDJoK8zw58"></iframe>
-        
+        <Container fluid>
+          <Navbar expand="" variant="light" bg="light">
+            <Container fluid>
+              <Navbar.Brand href="#">Youtube</Navbar.Brand>
+            </Container>
+          </Navbar>
+        </Container>
+  
         </div>
-       
-        {/*  <div className="pos-f-t">
-            <div className="collapse" id="navbarToggleExternalContent">
-              <div className="bg-dark p-4">
-                <h5 className="text-white h4">Collapsed content</h5>
-                <span className="text-muted">Toggleable via the navbar brand.</span>
-              </div>
-            </div>
-            <nav className="navbar navbar-dark bg-dark">
-              <button className="navbar-toggler" type="button"data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon"></span>
-              </button>
-            </nav>
+        <div>
+        <SearchBar/>
+          <Container>
+            <iframe height="500px" width='1000px' src="https://www.youtube.com/embed/cWDJoK8zw58"></iframe>
+          </Container>
+        </div>
+        <Container fluid>
+        
+        < button onClick={postComment}> Click me to post comment</button>
+        <Comment comments={comments} postReply={postReply} deleteComment={deleteComment} putComment={putComment} />
+        </Container>
+
       </div>
-
-
-      <div className="App">
- */}
-
-{/*<SearchBar />*/}
-
-
-        <button onClick={postComment}> Click me to post comment</button>
-
-          <Comments comments={comments} postReply={postReply} deleteComment={deleteComment} putComment={putComment}/>
-      </div>
-
-
-
 
     );
 }

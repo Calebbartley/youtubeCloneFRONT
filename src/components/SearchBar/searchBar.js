@@ -10,14 +10,14 @@ function SearchBar(props) {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        Search
+
         <input
           type="text"
           value={search}
           onChange={e => setInput(e.target.value)}
         />
       </label>
-      <input type="submit" value="Submit" />
+      <input type="submit" placeholder="Search" value="Submit" />
     </form>
   );
 }
